@@ -1,0 +1,27 @@
+---
+title: "R Notebook"
+output: html_notebook
+author: Sushmita Maltare
+---
+
+This workflow is based on the article: TCGA Workflow: Analyze cancer genomics and epigenomics data using Bioconductor packages (Silva et al. 2016). Due to time and space limitations, we downloaded only a subset of the data, for a real analysis please use all data available. The data used in the examples are available in the package TCGAWorkflowData.
+
+```{r}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("TCGAWorkflowData")
+```
+
+Loading packages:
+At the beginning of each section, the packages required to execute the code will be loaded. However, the following packages are required for all sections.
+
+TCGAWorkflowData: this package contains the data necessary to execute each of the analysis steps. This is a subset of the downloaded to make the example faster. For a real analysis, please use all the data available.
+DT: we will use it to visualize the results
+
+```{r}
+library(TCGAWorkflowData)
+library(DT)
+```
+
+
